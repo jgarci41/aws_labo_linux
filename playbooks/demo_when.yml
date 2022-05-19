@@ -1,0 +1,9 @@
+---
+- hosts: "linux10"
+  become: true
+  tasks:
+    - name: Creamos directorio /var/tmp/prueba123
+      file:
+        path: /var/tmp/prueba123
+        state: directory
+      when: ansible_default_ipv4.address == "192.168.17.110"
